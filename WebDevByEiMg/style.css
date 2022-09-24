@@ -1,0 +1,36 @@
+section {
+    display: flex;
+}
+
+nav, main, aside {
+    height: 400px;
+    background: cyan;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+main {
+    flex-grow: 3;
+}
+
+@media (max-width:800px) {
+    section{
+        flex-wrap: wrap;
+    }
+
+    aside{
+        flex: 100%;
+        height: 100px;;
+    }
+}
+
+html,body{
+    height:100%;
+}
+
+@media (max-width:600px){
+    nav,main,aside{
+        flex:100%;
+        height: 400px;
+    }
+}

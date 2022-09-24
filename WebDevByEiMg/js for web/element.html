@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/07516f3cbc.js"></script>
+
+</head>
+<body>
+    <!-- <ul>
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+        <li>Item Four</li>
+    </ul> -->
+    <ul></ul>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // let items = document.querySelectorAll("ul > li");
+        // // for (i of items) {
+        // //      console.log(i.textContent)  
+        // // }
+        // items.forEach(li => li.textContent)
+        console.time()
+
+        let fruits = ["mango","banana","orange"]
+        let ul = document.querySelector("ul")
+
+        fruits.map( fruit => {
+            let li = document.createElement("li")
+            li.textContent = fruit
+            ul.appendChild(li)
+        })
+        console.timeEnd()
+    </script>
+</body>
+</html>

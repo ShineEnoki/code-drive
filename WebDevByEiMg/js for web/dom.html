@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/07516f3cbc.js"></script>
+    <style>
+     
+    </style>
+</head>
+<body>
+    
+    <div id="box1">Box1 Content</div>
+    <div id="box2">Box2 Content</div>
+    <div class="name">
+        <p>a</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       
+
+        document
+            .querySelector("#box1")
+            .textContent = "Hello DOM"
+
+        document
+            .querySelector("#box2")
+            .appendChild(document.createElement("br"))
+
+        let hello = document.createTextNode(" This is new text")
+        document
+            .querySelector("#box2")
+            .appendChild(hello)
+
+        document
+            .querySelector("#box2")
+            .appendChild(document.createElement("br"))
+
+        let kitty =document.createElement("p")
+        kitty.setAttribute("background-color","red")
+        kitty.textContent = "This is new element"
+        document.querySelector("#box2").appendChild(kitty)
+
+        let first = document.createElement("b")
+        first.textContent = "I'm first"
+
+        let New = document.querySelector(".name")
+        New.insertBefore(first,New.firstChild)
+
+        document.querySelector(".name").remove()
+
+        let he = document.createElement("b")
+        he.textContent = "Hello DOM."
+        he.classList.add("btn", "btn-danger")
+        document.querySelector("div").appendChild(he)
+
+        let hi = he.cloneNode(true)
+
+    </script>
+        
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DOM</title>
+
+	<style>
+		#box {
+			position: relative;
+			width: 800px;
+			height: 30px;
+			padding: 10px;
+			background: skyblue;
+			border: 5px solid darkblue;
+		}
+		#ball {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 30px;
+			height: 30px;
+			border-radius: 30px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- <div id="box">
+		<div id="ball"></div>
+	</div>
+
+	<button onclick="start()">start</button>
+	<button onclick="stop()">stop</button> -->
+
+	<div id="box1">
+		Box One Content
+	</div>
+	<div id="box2">
+		Box Two Content
+	</div>
+
+
+	<script>
+		// var ball = document.querySelector("#ball")
+
+		// var left = 0
+		// var direction = "right"
+
+		// var interval = setInterval(move,10)
+
+		// function move()  {
+		// 	if (direction === "right"){
+		// 		left += 1
+		// 		if(left > 790) direction = "left"
+		// 	} else {
+		// 		left -= 1
+		// 		if (left < 1) direction = "right"
+
+		// 	}
+		// 	ball.style.left = `${left}px`	
+		// }
+
+		// function start() {
+		// 	interval = setInterval(move,10)
+		// }
+
+		// function stop () {
+		// 	clearInterval(interval)
+		//}
+
+		// document
+		// 	.querySelector("#box1")
+		// 	.textContent = "Hello <b>DOM</b>"
+
+		// var add = document.createTextNode("Hello DOM")
+		// document
+		// 	.querySelector("#box2")
+		// 	.appendChild(add)
+
+		// let hello = document.createElement("b")
+		// hello.textContent = "Hello Die."
+
+		// document
+		// 	.querySelector("div")
+		// 	.appendChild(hello)
+
+		
+		// hello.textContent = "Hello DO."
+		// let div = document.querySelector("div")
+		// div.insertBefore(hello, div.firstChild)
+
+		// console.log("to me funny so that matter")
+
+
+		var hello = document.createElement("b")
+		hello.textContent = "HI"
+		var div = document.querySelector("div")
+		div.insertBefore(hello,div.firstChild)
+
+		document.querySelector("div").remove() //div နှစ်ခုရှိရင် ့ပထမ တစ် ခု ပျက်
+		
+
+</script>
+</body>
+</html>

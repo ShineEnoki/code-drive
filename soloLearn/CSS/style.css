@@ -1,0 +1,9 @@
+
+h1 {color:red;
+    font-family: Arial;}
+.myclass {
+    color:orange;
+	font-style: italic;}
+#myid {
+    color: blue;
+    font-size: 12px;}

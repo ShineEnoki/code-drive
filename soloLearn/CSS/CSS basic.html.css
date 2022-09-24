@@ -1,0 +1,18 @@
+
+<html>
+	<head>
+		<title>CSS basic</title>
+		<style>
+			h1{color:red;}
+			.myclass{color:orange;}
+			#myid{background-color:rgb(49, 49, 236)}
+		</style>
+	</head>
+	
+	<body>
+		<h1>This is header</h1>
+		<p class="myclass">Orange color</p>
+		<p id="myid">Blue color</p>
+	</body>
+</html>
+

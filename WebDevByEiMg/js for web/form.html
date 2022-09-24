@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/07516f3cbc.js"></script>
+    <style>
+        #result{
+            font-size: 2em;
+            font-weight: bold;
+        }
+        label{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operator form</h1>
+    <div>
+        <label class="c" for="a">Plz enter number only</label>
+        <br>
+        <input  type="text" id="a">
+    </div>
+    <div>
+        <label class="d" for="b">Enter Number only</label>
+        <br>
+        <input type="text" id="b">
+    </div>
+    <div id="result"></div>
+    <br>
+    <button class="btn btn-primary" id="add">Add</button>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelector("#a").onkeyup = function() {
+			let a = parseInt(document.querySelector("#a").value)
+			if(!isNaN(a)) {
+				document.querySelector("[for=a]")
+					.style.display = "none"
+			}
+		}
+
+		document.querySelector("#b").onkeyup = function() {
+			let a = parseInt(document.querySelector("#b").value)
+			if(!isNaN(a)) {
+				document.querySelector("[for=b]")
+					.style.display = "none"
+			}
+		}
+
+		document.querySelector("#add").onclick = function() {
+			let a = parseInt(document.querySelector("#a").value)
+			let b = parseInt(document.querySelector("#b").value)
+
+			if(isNaN(a)) {
+				document.querySelector("[for=a]")
+					.style.display = "inline"
+			}
+
+			if(isNaN(b)) {
+				document.querySelector("[for=b]")
+					.style.display = "inline"
+			}
+
+			let result = a + b
+			if(!isNaN(result)) {
+				document.querySelector("#result").textContent = result
+			}
+		}
+    </script>
+</body>
+</html>
