@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: rgba(21, 31, 31, 0.863);
+}
+
+
+
+nav{
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width:100%;
+    backdrop-filter: blur(8px);
+}
+
+nav ul{
+    list-style: none;
+}
+
+.nav-item{
+    display:inline-block;
+    margin-left: 20px;
+}
+
+.nav-link{
+    display:inline-block;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin-top: 15px;
+
+}
+
+.nav-link:hover{
+    color: rgb(247, 0, 0);
+}
+
+main{
+    display:block;
+}
+
+.image {
+    margin-top:100px;
+    margin-left:10px;
+    justify-content: center;
+    text-align: center;
+
+
+}
+
+div>img{
+    width:310px;
+    height: 320px;
+    border-radius: 35%;   
+    box-sizing: border-box;
+    box-shadow: 5px 10px 5px rgb(235, 13, 5) ;
+    margin:10px auto;
+    padding:0px auto;
+
+}
+.text{
+    box-sizing: border-box;
+    color:rgb(255, 251, 251);
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    line-height: 1em;
+    letter-spacing: 2px;
+    justify-content: center;
+
+    
+}
+
+h1>span{
+    color: rgba(255, 0, 0, 0.945);
+    text-shadow: -2px 2px 5px rgb(11, 35, 253);
+}
+
+p{
+    line-height: 2em;
+}
+
+p{
+    font-weight: bold;
+    font-size: x-large;
+    font-family: "Sofia", sans-serif;
+
+}
+
+.reply{
+    color:beige;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    li a span{
+        display: none;
+    }
+}   
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    main{
+        display: flex;
+    }
+    .image{
+        flex-grow: 2;
+    }
+    .text{
+        margin-top: 200px;
+        flex-grow: 4;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+}   
