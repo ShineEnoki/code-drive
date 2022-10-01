@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #10131c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 350px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #21253c;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+#container:before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  animation: rotation 4s linear infinite;
+  background-image: conic-gradient(transparent, transparent, transparent, #00ffcc);
+}
+
+#container:after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  animation: rotation 4s linear infinite;
+  animation-delay: -2s;
+  background-image: conic-gradient(transparent, transparent, transparent, #5621cf);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#container > form {
+  width: 98%;
+  height: 98%;
+  border-radius: 6px;
+  background: #21253c;
+  z-index: 9;
+}
+
+form > h5 {
+  color: #c1c5c9;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.input-box {
+  position: relative;
+  width: 90%;
+  height: 65px;
+  margin: auto;
+  margin-top: 18px;
+}
+
+label {
+  transition: all .5s;
+  font-size: 1em;
+  color: #c1c5c9;
+  display: block;
+  height: 20px;
+  transform: translateY(20px);
+}
+
+input {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 3px 0;
+  color: #c1c5c9;
+  font-size: 1em;
+}
+
+.underline {
+  height: 4px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #00ffcc, #5621cf);
+  margin-top: -6px;
+}
+
+#btn {
+  width: 90%;
+  height: 35px;
+  border-radius: 6px;
+  margin: auto;
+  margin-top: 32px;
+  color: #c1c5c9;
+  font-size: 1em;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #5621cf;
+  transition: all .5s;
+}
+
+#btn:hover {
+  filter: drop-shadow(2px 2px 5px #5621cf);
+}
+
+#reply{
+  color:aliceblue;
+  text-align: center; 
+}
+
+
+h4{
+  position:absolute;
+  bottom:10px;
+  left:20px;
+  color:aliceblue;
+  text-align: center; 
+}
