@@ -4,7 +4,7 @@
     box-sizing: border-box;
   }
   
-  body {
+  .main {
     height: 100vh;
     width: 100vw;
     background: #eaecf0; /*original */
@@ -13,25 +13,40 @@
     align-items: center;
   }
   
+  nav {
+    display:flex;
+    background-color: rgba(121, 153, 153, 0.815);
+  }
+
+  nav > ul {
+    display: flex;
+  }
+
+  nav > ul > li {
+    list-style: none;
+  }
+
   #battle{
-    width: 800px;
+    margin: 1% 5%;
+    width: 90%;
     height: 350px;
     background-color: #00ffcc;
-    margin-right: 20px;
     display: flex;
+    justify-content: center;
+
   }
 
   #playerOne {
     position:relative;
     width: 400px;
     display:block;
-    background-color: #5621cf;
+    background-color: blue;
   }
   #playerTwo {
     position:relative;
     width: 400px;
     display: block;
-    background-color: brown;
+    background-color: red;
   }
 
   .icon {
@@ -66,24 +81,33 @@
     top:0;
   }
 
-  .icon1 {
+  .icon5 {
     position: absolute;
     left:260px;
     top: 175px;
   }
 
+  #vs {
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding-top: 130px;
+    font-size: 35px;
+    font-family: 'Noto Sans Mono', monospace;
+  }
 
   #container {
     overflow: hidden;
     position: relative;
     width: 300px;
-    height: 350px;
+    height: 170px;
     border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #21253c;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    margin-left: 5%;
   }
   
   #container:before {
@@ -121,47 +145,20 @@
     background: #21253c;
     z-index: 9;
   }
-  
-  form > h5 {
-    color: #c1c5c9;
-    font-weight: 500;
-    text-align: center;
-    margin-top: 18px;
+
+  form > span {
+    color: rgb(19, 230, 245);
+    display:flex;
+
   }
-  
-  .input-box {
-    position: relative;
-    width: 90%;
-    height: 65px;
-    margin: auto;
-    margin-top: 18px;
+  form > span > div {
+    color: rgb(19, 230, 245);
+    margin: 10px;
+    justify-content: center;
   }
+
   
-  label {
-    transition: all .5s;
-    font-size: 1em;
-    color: #c1c5c9;
-    display: block;
-    height: 20px;
-    transform: translateY(20px);
-  }
-  
-  input {
-    outline: none;
-    border: none;
-    background: none;
-    padding: 3px 0;
-    color: #c1c5c9;
-    font-size: 1em;
-  }
-  
-  .underline {
-    height: 4px;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #00ffcc, #5621cf);
-    margin-top: -6px;
-  }
-  
+
   #btn {
     width: 90%;
     height: 35px;
@@ -188,11 +185,3 @@
     text-align: center; 
   }
   
-  
-  h4{
-    position:absolute;
-    bottom:10px;
-    left:20px;
-    color:aliceblue;
-    text-align: center; 
-  }
