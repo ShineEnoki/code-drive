@@ -1,19 +1,5 @@
-function destroyer(arr) {
-    const valsToRemove = Object.values(arguments).slice(1);
-    const filteredArray = [];
-  
-    for (let i = 0; i < arr.length; i++) {
-      let removeElement = false;
-      for (let j = 0; j < valsToRemove.length; j++) {
-        if (arr[i] === valsToRemove[j]) {
-          removeElement = true;
-        }
-      }
-      if (!removeElement) {
-        filteredArray.push(arr[i]);
-      }
-    }
-    return filteredArray;
-  }
-  
-console.log( destroyer([3, 5, 1, 2, 2], 2, 3, 5) );
+let arr =  [{ first: "Romeo", last: "Montague" }, 
+            { first: "Mercutio", last: null }, 
+            { first: "Tybalt", last: "Capulet" }]
+        
+console.log( [1,2] = [1,2] )
