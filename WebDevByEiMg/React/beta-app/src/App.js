@@ -85,10 +85,49 @@ import React from 'react';
 
 // export default App;
 
-const Header = props => (
-    <div>
-        This is header with arrow function.
-    </div>
+
+
+const Item = ({name, price}) => (
+    <li>
+        {name},${price}
+    </li>
 )
 
-export default Header;
+const App = props => {
+    let [state,setState] = React.useState([
+        {id: 1, name: "Apple", price: 500},
+        {id: 2, name: "sakura", price: 0}
+    ]);
+
+    let nameRef = React.createRef();
+    let priceRef = React.createRef();
+
+    let add = () => {
+        let id = state.length + 1;
+        let name = nameRef.current.value;
+        let price = priceRef.current.value;
+
+        setState(
+            [
+                ...state,
+                {id, name, price}
+            ]
+        )
+    }
+    return ( 
+        <div>
+            <ul>
+                {state.map(i => 
+                    <Item 
+                        name = {i.name}
+                        price = {i.price}
+                    />
+                )}
+            </ul>
+            <input type="text" ref={nameRef}></input>
+            <input type="text" ref={priceRef}></input>
+            <button onClick={add}>Add</button>
+        </div>
+    )
+}
+export default App;
