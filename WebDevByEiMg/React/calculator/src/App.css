@@ -5,22 +5,15 @@
 }
 
 .body{
-    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #36c98e, #89c210);
 }
 
-.content-container{
-    width: 500px;
-}
-.display{
-    background-color: rgba(0, 0, 0, 0.7);
-    align-items: center;
+.content-center{
+    width: 400px;
 }
 
-.btn-container{
-    display: flex;
-    padding: 2px;
-}
 
-.btn-container > button {
-    margin: 2px;
-}
+
+
+

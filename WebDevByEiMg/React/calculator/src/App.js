@@ -1,19 +1,24 @@
-import {Button, Alert} from 'react-bootstrap'
+
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Display from './Componet/Display';
+import Butt from './Componet/Button';
 
 const App = props => {
     return (
         <div className='body'>
-            <div className='content-container'>
-                <div className='display'>
-                    <div>Output 1</div>
-                    <div>Output 2</div>
-                </div>
+            <div className='content-center'>
+                <div className='container row'>
 
-                <div className='btn-container'>
-                    <Button variant='outline-warning'>1</Button>
-                    <Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button><Button variant='outline-warning'>1</Button>
+                    <div className='row'>
+                        <Display/>
+                    </div>
+                    
+                    <div className='row'>
+                        <Butt/>
+                    </div>
+                
                 </div>
             </div>
         </div>
