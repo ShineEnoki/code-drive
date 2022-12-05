@@ -6,38 +6,38 @@ const Butt = props => {
     return (
         <div>
             <div className="row">
+                <button className="col-3 btn btn-outline-info">(</button>
+                <button className="col-3 btn btn-outline-info">)</button>
+                <button className="col-3 btn btn-outline-info">%</button>
+                <button className="col-3 btn btn-dark">AC</button>
+            </div>
+
+            <div className="row">
                 <button className="col-3 btn btn-outline-warning">7</button>
-                <button className="col-3">8</button>
-                <button className="col-3">9</button>
-                <button className="col-3">AC</button>
+                <button className="col-3 btn btn-outline-warning">8</button>
+                <button className="col-3 btn btn-outline-warning">9</button>
+                <button className="col-3 btn btn-outline-info">/</button>
             </div>
 
             <div className="row">
-                <button className="col-3">4</button>
-                <button className="col-3">5</button>
-                <button className="col-3">6</button>
-                <button className="col-3">+</button>
+                <button className="col-3 btn btn-outline-warning">4</button>
+                <button className="col-3 btn btn-outline-warning">5</button>
+                <button className="col-3 btn btn-outline-warning">6</button>
+                <button className="col-3 btn btn-outline-info">x</button>
             </div>
 
             <div className="row">
-                <button className="col-3">1</button>
-                <button className="col-3">2</button>
-                <button className="col-3">3</button>
-                <button className="col-3">-</button>
+                <button className="col-3 btn btn-outline-warning">1</button>
+                <button className="col-3 btn btn-outline-warning">2</button>
+                <button className="col-3 btn btn-outline-warning">3</button>
+                <button className="col-3 btn btn-outline-info">-</button>
             </div>
 
             <div className="row">
-                <button className="col-3">0</button>
-                <button className="col-3">.</button>
-                <button className="col-3">*</button>
-                <button className="col-3">/</button>
-            </div>
-
-            <div className="row">
-                <button className="col-3">1</button>
-                <button className="col-3">2</button>
-                <button className="col-3">3</button>
-                <button className="col-3">4</button>
+                <button className="col-3 btn btn-outline-warning">0</button>
+                <button className="col-3 btn btn-outline-warning">.</button>
+                <button className="col-3 btn btn-light">=</button>
+                <button className="col-3 btn btn-outline-info">+</button>
             </div>
             
         </div>

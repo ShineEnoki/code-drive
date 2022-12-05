@@ -2,14 +2,20 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Navbar from'./Componet/Navbar'
 import Display from './Componet/Display';
 import Butt from './Componet/Button';
 
+
 const App = props => {
+    document.body.style = 'background: grey';
+
+
     return (
-        <div className='body'>
-            <div className='content-center'>
-                <div className='container row'>
+        <div>
+            <Navbar />
+            <div className='body col-lg-4'>
+                <div className=' row'>
 
                     <div className='row'>
                         <Display/>
@@ -20,6 +26,7 @@ const App = props => {
                     </div>
                 
                 </div>
+                
             </div>
         </div>
     )

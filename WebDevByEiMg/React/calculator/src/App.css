@@ -4,13 +4,27 @@
     box-sizing: border-box;
 }
 
-.body{
+/* body{
+    background-color: grey;
+    height: 100vh;
+    position: relative;
+} */
 
-    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #36c98e, #89c210);
+.body{
+    width: 350px;
+    position: absolute;
+    top: 25%;
+    left: 40px;
 }
 
-.content-center{
-    width: 400px;
+
+@media (min-width: 768px){
+    .body{
+        width: 350px;
+        position: absolute;
+        top: 30%;
+        left: 33%;
+    }
 }
 
 
