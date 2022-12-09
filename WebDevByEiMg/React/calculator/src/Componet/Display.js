@@ -6,8 +6,8 @@ import './component.css';
 const Display = props => {
     return (
         <div className='display-item row rounded'>
-            <div className="text-end mb-1 mt-1">Output 1</div>
-            <div className="text-end mb-1">Output 2</div>
+            <div className="text-end mb-1 mt-1"></div>
+            <div className="text-end mb-1"></div>
         </div>
     )
 }

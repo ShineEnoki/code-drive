@@ -5,9 +5,18 @@ import './component.css';
 
 const Navbar = props => {
     return (
-        <nav className="stick-top nav bg-primary">
-            <li className="nav-item">Home</li>
-            <li className="nav-item">Features</li>
+        <nav class="navbar navbar-expand navbar-dark bg-primary">
+            <div class="container-fluid">
+                <div className="nav-brand">S</div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        Home
+                    </li>
+                    <li class="nav-item">
+                        About
+                    </li>
+                </ul>
+            </div>
         </nav>
     )
 }

@@ -6,10 +6,10 @@ const Butt = props => {
     return (
         <div>
             <div className="row">
-                <button className="col-3 btn btn-outline-info">(</button>
-                <button className="col-3 btn btn-outline-info">)</button>
-                <button className="col-3 btn btn-outline-info">%</button>
-                <button className="col-3 btn btn-dark">AC</button>
+                <button className="col-3 btn btn-outline-info" onClick={() => this.add('(')}> ( </button>
+                <button className="col-3 btn btn-outline-info" onClick={() => this.add('(')}> ) </button>
+                <button className="col-3 btn btn-outline-info" onClick={() => this.add('(')}> % </button>
+                <button className="col-3 btn btn-dark" onClick={() => this.add('(')}> AC </button>
             </div>
 
             <div className="row">
