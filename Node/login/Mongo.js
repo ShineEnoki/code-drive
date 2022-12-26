@@ -12,7 +12,7 @@ class Mongo{
     database = this.client.db('it-school');
     collection = this.database.collection('student');
 
-    insert(name, age, grade, email, password){
+    insert(name = null, age = null, grade = null, email = null, password = null){
         try{
             let query = {
                     name: `${name}`,
@@ -31,13 +31,12 @@ class Mongo{
     
             
         } finally{
-            this.client.close();
+            ///
         }
         
-    }
+    };
+
     
 }
 
-// let Mg = new Mongo();
-
-// Mg.insert('akty', 16, 11);
+module.exports = Mongo;
