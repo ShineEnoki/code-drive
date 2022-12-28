@@ -3,23 +3,17 @@ const bodyParser = require('body-parser');
 
 const Mongo = require('./Mongo');
 const session = require('express-session');
-const { ProfilingLevel } = require('mongodb');
-
-const bcrypt = require('bcrypt');
 
 
 const app = express();
 
 let port = process.env.port || 8080;
 
-// generating password-encrypt function
-const salt = bcrypt.genSaltSync(10);
 
-
-// setting ejs folder
+// setting ejs folder, ejs file must always in views folder.
 app.set('view engine', 'ejs');
 
-// one day to miliseconds
+// milisecond to one day
 const oneDay = 1000 * 60 * 60 * 24;
 
 // session middle-ware
@@ -37,37 +31,53 @@ app.use(express.urlencoded({extended: false}));
 
 // Home page
 app.get('/', (req, res) => {
-    req.session.loginError = false;
-    res.render('index.ejs')
+    let error = req.query.error;
+    if(!error){
+        error = false;
+    } else {
+        error = true;
+    }
+    res.render('index.ejs', {err: `${error}`})
 });
 
 app.post('/', (req, res) => {
     let inputEmail = req.body.email;
     let inputPassword = req.body.password;
+    res.redirect(`http://localhost:8080/check-user?email=${inputEmail}&password=${inputPassword}`);
+});
 
-    let encryptPassword = bcrypt.hashSync(inputPassword, salt);//encrypt user password
+
+// check if there user with the data given from home page
+app.get('/check-user', (req, res) => {
+    let inputEmail = req.query.email;
+    let inputPassword = req.query.password;
 
     let mongo = new Mongo();
 
     let query = {
         email: `${inputEmail}`,
-        password: `${encryptPassword}`
+        password: `${inputPassword}`
     }
+
     //Check if there a user in db or not
     //if there is, redirect to profile
-    //if not give error message
+    //if not give error message and redirect to login page
     mongo.collection.findOne(query, (err, data) => {
         if(err) throw err;
         if(data){  
-            req.session.name = data.name;
+            req.session.email = data.email;
             req.session.password = data.password;
+            req.session.name = data.name;
             res.redirect('http://localhost:8080/profile');
-        } else {
-            req.session.loginError = true;
-            res.redirect('http://localhost:8080/')
+        }
+        else {
+            res.redirect('http://localhost:8080/?error=true')
         }
     })
-})
+
+});
+//end of home page
+
 
 
 // register page
@@ -82,14 +92,14 @@ app.post('/register', (req, res) => {
     db.insert(
         postData.name,
         postData.age,
-        postData.grade,
         postData.email,
-        bcrypt.hashSync(postData.password, salt)//encrypt password
+        postData.password
     )
 
     res.redirect('http://localhost:8080/')
     
 });
+// end of register page
 
 
 // profile
@@ -112,12 +122,13 @@ app.get('/profile', (req, res) => {
     } else {           
         res.redirect('http://localhost:8080'); 
     }
-    
-
-
 });
-//
 
+//logout function on profile page
+app.get('/logout', (req, res) => {
+    res.redirect('http://localhost:8080'); 
+});
+// end of profile section
 
 app.listen(port, err => {
     if(err) throw err;

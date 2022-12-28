@@ -12,12 +12,11 @@ class Mongo{
     database = this.client.db('it-school');
     collection = this.database.collection('student');
 
-    insert(name = null, age = null, grade = null, email = null, password = null){
+    insert(name = null, age = null, email = null, password = null){
         try{
             let query = {
                     name: `${name}`,
                     age: `${age}`,
-                    grade: `${grade}`,
                     email: `${email}`,
                     password: `${password}`
             };
