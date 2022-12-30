@@ -8,14 +8,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Profile</title>
+
+    <style>
+        
+        .form-container{
+            max-width: 400px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5 col-6">
+        <!-- requesting profile photo -->
+        <div class="form-container">
+            <form action="/profile" enctype="multipart/form-data" method="post">
+                <input 
+                    type="file" 
+                    placeholder="Upload profile photo" 
+                    name="jpg"
+                >
+                <input type="submit" placeholder="Upload profile picture">
+            </form>
+        </div>
+
+
+        <!-- showing profile data -->
         <div class="card">
             <div class="card-header">
                 <h2><%= name %></h2>
             </div>
             <div class="card-body">
+                <div>
+                    <img src="/photo/profile.jpg" alt="profile photo" width="300">
+                </div>
                 <div>age:  <%= age %> </div>
                 <div> email:  <%= email %> </div>
             </div>
