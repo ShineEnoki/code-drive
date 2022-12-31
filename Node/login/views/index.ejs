@@ -36,6 +36,11 @@
             <% if(err == 'true'){ %>
                 <div class="alert alert-warn">Invalid email or password</div>
             <% } %>
+            
+            <br>
+            <div id="wait">
+                
+            </div>
 
             <br>
             <input
@@ -51,6 +56,7 @@
             <button 
                 type="submit"
                 class="btn btn-100  btn-primary"
+                onclick="waitingForAuth()"
             >
             Login
             </button>
@@ -65,5 +71,11 @@
         
     </div>
     
+
+    <script>
+        function waitingForAuth(){
+            document.querySelector("#wait").textContent = "Wait data is checking";
+        }
+    </script>
 </body>
 </html>

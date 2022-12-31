@@ -12,12 +12,17 @@ router.post('/', (req, res) => {
     //insert data from user to mongo database
     let db = new Mongo();
     let postData = req.body;
-    db.insert(
-        postData.name,
-        postData.age,
-        postData.email,
-        postData.password
-    )
+    let query = {
+        name: `${postData.name}`,
+        age: `${postData.age}`,
+        email: `${postData.email}`,
+        password: `${postData.password}`,
+        role: 'student'
+    }
+    db.collection.insertOne(query, (err, data) => {
+        if(err) throw err;
+        console.log(`${query._id} is inserted with role: student`);
+    })
 
     res.redirect('../')
     

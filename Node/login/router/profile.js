@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Mongo = require('../Mongo');
 
+const formidable = require('formidable');
+const fse = require('fs-extra');
 
 router.get('/', (req, res) => {
     // if user has already login.This will show his Profile.
@@ -28,20 +30,18 @@ router.post('/', (req, res) => {
     let form = new formidable.IncomingForm();
 
     form.parse(req, (err, fields, files) =>{
-
+        let name = req.session.name;
+        console.log(name)
         let oldPath = files.jpg.filepath;
-        let newPath = __dirname + "\\views\\photo\\profile.jpg"
-        fse.move(oldPath, newPath, err=> {
+        let newPath = __dirname + `\\views\\photo\\${name}.jpg`
+        fse.copy(oldPath, newPath, err=> {
             if(err) throw err;
+            console.log('1 photo is inserted')
         });
     });
     
 
 });
-
-
-
-
 
 
 
