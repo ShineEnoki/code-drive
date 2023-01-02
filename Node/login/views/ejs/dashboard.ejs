@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="h-3 mb-2 text-center" >User List</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <!-- <td>No</td> -->
+                    <td scope="col" class="font-weight-bold">No</td>
+                    <td scope="col" class="font-weight-bold">Name</td>
+                    <td scope="col" class="font-weight-bold">Age</td>
+                    <td scope="col" class="font-weight-bold">Email</td>
+                    <td scope="col" class="font-weight-bold">Role</td>
+                    <td scope="col" class="font-weight-bold">Actions</td>
+
+                </tr>
+            </thead>
+            
+            <% for(let i = 0; i<data.length; i++) { %>
+                <tr scope="row">
+                    <td> <%= i+1 %> </td>
+                    <td> <%= data[i].name %> </td>
+                    <td> <%= data[i].age %> </td>
+                    <td> <%= data[i].email %> </td>
+                    <td> <%= data[i].role %>  </td>
+                    <td> 
+                        <div class="btn-group dropdown">
+                            <a href="#" class="btn btn-sm btn-outline-primary dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            >
+                                Change Role
+                            </a>
+
+                            <div class="dropdown-menu">
+                                <a href="http://localhost:8080/role?email=<%= data[i].email %>&role=student" class="dropdown-item">Student</a>
+                                <a href="http://localhost:8080/role?email=<%= data[i].email %>&role=teacher" class="dropdown-item">Teacher</a>
+                                <a href="http://localhost:8080/role?email=<%= data[i].email %>&role=admin" class="dropdown-item">Admin</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

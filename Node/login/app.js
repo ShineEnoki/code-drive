@@ -5,16 +5,17 @@ const session = require('express-session');
 
 const Mongo = require('./Mongo');
 
-//to handle post file data
-const fs = require('fs');
-const formidable = require('formidable');
-const fse = require('fs-extra');
 
 // routers
-const home = require('./router/home');
-const register = require('./router/register');
-const profile = require('./router/profile');
-const logout = require('./router/logout');
+// main routers
+const home =        require('./views/router/home');
+const register =    require('./views/router/register');
+const profile =     require('./views/router/profile');
+const logout =      require('./views/router/logout');
+const dashboard =   require('./views/router/dashboard');
+
+// actions routers
+const role =        require('./views/router/actions/role')
 
 
 const app = express();
@@ -55,6 +56,12 @@ app.use('/profile', profile);
 
 //logout
 app.use('/logout', logout);
+
+// admin dashboard
+app.use('/dashboard', dashboard);
+
+//role
+app.use('/role', role);
 
 
 app.listen(port, err => {
