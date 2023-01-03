@@ -22,40 +22,10 @@ router.get('/',  (req, res) => {
 router.post('/', (req, res) => {
     let inputEmail = req.body.email;
     let inputPassword = req.body.password;
-    res.redirect(`/check-user?email=${inputEmail}&password=${inputPassword}`);
+    res.redirect(`../check-user?email=${inputEmail}&password=${inputPassword}`);
 });
 
 
-// check if there user with the data given from home page
-router.get('/check-user', (req, res) => {
-    let inputEmail = req.query.email;
-    let inputPassword = req.query.password;
-
-    let mongo = new Mongo();
-
-    let query = {
-        email: `${inputEmail}`,
-        password: `${inputPassword}`
-    }
-
-    //Check if there a user in db or not
-    //if there is, redirect to profile
-    //if not give error message and redirect to login page
-    mongo.collection.findOne(query, (err, data) => {
-        if(err) throw err;
-        if(data){  
-            req.session.email = data.email;
-            req.session.password = data.password;
-            req.session.name = data.name;
-            req.session.role = data.role;
-            res.redirect(`/profile`);
-        }
-        else {
-            res.redirect('/?error=true')
-        }
-    })
-
-});
 //end of home page
 
 module.exports = router;

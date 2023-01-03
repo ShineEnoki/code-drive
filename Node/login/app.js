@@ -11,11 +11,12 @@ const Mongo = require('./Mongo');
 const home =        require('./views/router/home');
 const register =    require('./views/router/register');
 const profile =     require('./views/router/profile');
-const logout =      require('./views/router/logout');
 const dashboard =   require('./views/router/dashboard');
 
 // actions routers
-const role =        require('./views/router/actions/role')
+const role =        require('./views/router/actions/role');
+const checkUser =   require('./views/router/actions/checkUser');
+const logout =      require('./views/router/actions/logout');
 
 
 const app = express();
@@ -47,18 +48,25 @@ app.use(express.urlencoded({extended: false}));
 app.use('/', home);
 
 
+
+
 // register page
 app.use('/register', register);
 
+//check-user route
+app.use('/check-user', checkUser);
 
-// profile
+// profile page
 app.use('/profile', profile);
 
-//logout
+
+//logout route
 app.use('/logout', logout);
+
 
 // admin dashboard
 app.use('/dashboard', dashboard);
+
 
 //role
 app.use('/role', role);

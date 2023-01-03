@@ -34,7 +34,7 @@
         <form action="/" method="POST" class="child">
             <h1>Sign in</h1>
             <% if(err == 'true'){ %>
-                <div class="alert alert-warn">Invalid email or password</div>
+                <div class="alert alert-warn" role="alert">Invalid email or password</div>
             <% } %>
             
             <br>
@@ -74,8 +74,9 @@
 
     <script>
         function waitingForAuth(){
-            document.querySelector("#wait").textContent = "Wait data is checking";
+            document.querySelector("#wait").textContent = "Authenticating! please wait.";
         }
     </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
