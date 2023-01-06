@@ -9,6 +9,5 @@ router.get('/', (req, res) => {
     req.session.password = null;
     res.redirect('../'); 
 });
-// end of profile section
 
 module.exports = router;

@@ -29,13 +29,13 @@
         <!-- requesting profile photo -->
         <% if(!photo) { %>
         <div class="form-container">
-            <form action="/profile" enctype="multipart/form-data" method="post">
+            <form action="/uploadPhoto" enctype="multipart/form-data" method="post">
                 <input 
                     type="file" 
                     placeholder="Upload profile photo" 
-                    name="jpg"
+                    name="image"
                 >
-                <input type="submit" placeholder="Upload profile picture">
+                <button class="btn btn-primary">Upload</button>
             </form>
         </div>
         <% } %>
@@ -54,7 +54,7 @@
                 this will show profile photo-->
                 <% if(photo) { %>
                 <div>
-                    <img src="../router/photo/<%= name %>.jpg" alt="profile photo" width="200px">
+                    <img src="../photo/<%= name %>.jpg" alt="profile photo" width="200px">
                 </div>
                 <% } %>
 

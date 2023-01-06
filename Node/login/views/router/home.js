@@ -5,7 +5,7 @@ const Mongo = require('../../Mongo');
 
 router.get('/',  (req, res) => {
     if(req.session.name){
-        console.log('session data is still on the requested device')
+        res.redirect(`../check-user?email=${req.session.email}&password=${req.session.password}`);
     }
 
     //if get error from (check-uer) route
