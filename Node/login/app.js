@@ -6,9 +6,6 @@ const fileUpload = require('express-fileupload');
 const path = require('path');
 
 
-const Mongo = require('./Mongo');
-
-
 // routers
 // main routers
 const home =        require('./views/router/home');
@@ -21,6 +18,7 @@ const role =        require('./views/router/actions/role');
 const checkUser =   require('./views/router/actions/checkUser');
 const logout =      require('./views/router/actions/logout');
 const uploadPhoto = require('./views/router/actions/uploadProfilePhoto');
+const deleteUser = require('./views/router/actions/deleteUser');
 
 
 const app = express();
@@ -77,19 +75,16 @@ app.use('/profile', profile);
 // admin dashboard
 app.use('/dashboard', dashboard);
 
+    //this route will change role of user
+    app.use('/role', role);
 
-//role
-app.use('/role', role);
+    //this route will delete user form database
+    app.use('/deleteUser', deleteUser);
 
 
 app.listen(port, err => {
     if(err) throw err;
     console.log(`Server is running on port ${port}`);
 });
-
-
-
-
-
 
   

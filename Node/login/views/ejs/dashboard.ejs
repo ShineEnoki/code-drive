@@ -34,6 +34,9 @@
                     <td> <%= data[i].email %> </td>
                     <td> <%= data[i].role %>  </td>
                     <td> 
+                        <!-- this is actions sections  -->
+
+                        <!-- change role section -->
                         <div class="btn-group dropdown">
                             <a href="#" class="btn btn-sm btn-outline-primary dropdown-toggle"
                             data-bs-toggle="dropdown"
@@ -47,6 +50,14 @@
                                 <a href="http://localhost:8080/role?email=<%= data[i].email %>&role=admin" class="dropdown-item">Admin</a>
                             </div>
                         </div>
+
+                        <!-- delete accout section
+                         -->
+                         <div class="btn btn-sm btn-outline-danger">
+                            <a href="http://localhost:8080/deleteUser?email=<%= data[i].email %>&photoStatus=<% data[i].photo %>">Delete</a>
+                         </div>
+
+
                     </td>
                 </tr>
             <% } %>

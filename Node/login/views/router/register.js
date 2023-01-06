@@ -20,7 +20,6 @@ router.post('/', (req, res) => {
         password: `${postData.password}`,
         role: 'student',
         photo: false,
-        role: 'student'
     }
     db.collection.insertOne(query, (err, data) => {
         if(err) throw err;
